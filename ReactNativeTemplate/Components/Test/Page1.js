@@ -2,6 +2,7 @@ import BC from "../../Utility/BaseComponent.js";
 import {View, Text,StyleSheet} from "react-native";
 import Button from "react-native-button";
 import {TestStyles} from "../../Themes/Default.js";
+import {Actions} from 'react-native-router-flux'
 
 export default class Page1 extends BC {
 	constructor(props){
@@ -21,7 +22,9 @@ export default class Page1 extends BC {
 				        }}>Toggle Background Color</Button>
 				<Button style={TestStyles.Button}
 						onPress={()=>{
-
+							Actions.Page2({
+								Message:"hell react native :) "
+							});
 						}}>Go Page2</Button>
 				<Text style={TestStyles.Text}>message</Text>
 			</View>

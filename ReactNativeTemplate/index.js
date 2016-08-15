@@ -5,8 +5,8 @@ import Page2 from "./Components/Test/Page2.js";
 
 const scenes=Actions.create(
 	<Scene key="root">
-		<Scene key="page1" component={Page1} title="page1"></Scene>
-		<Scene key="page2" component={Page2} title="page2"></Scene>
+		<Scene key="Page1" component={Page1} title="Page1" initial={true}></Scene>
+		<Scene key="Page2" component={Page2} title="Page2" ></Scene>
 	</Scene>
 );
 
