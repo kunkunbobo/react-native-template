@@ -12,21 +12,17 @@ import {
   View
 } from 'react-native';
 
+import {Scene, Actions,Router} from 'react-native-router-flux';
+import { Provider } from 'react-redux';
+import {Scenes,Store,RouterWithRedux} from "./index.js";
+
 class ReactNativeTemplate extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+        <Provider store={Store}>
+          <RouterWithRedux scenes={Scenes}>
+          </RouterWithRedux>
+        </Provider>
     );
   }
 }
