@@ -3,7 +3,7 @@ import {PropTypes, View, Text, StyleSheet} from "react-native";
 import Button from "react-native-button";
 import {TestStyles} from "../../Themes/Default.js";
 import {Actions} from 'react-native-router-flux';
-import {connect} from 'react-redux';
+// import {connect} from 'react-redux';
 
 class Page1 extends BC {
 	constructor(props) {
@@ -35,8 +35,8 @@ class Page1 extends BC {
 		);
 	}
 }
-// export default Page1;
-export default connect(({routes})=>({routes}))(Page1);
+export default Page1;
+// export default connect()(Page1);
 // export default connect(({routes},args) => {
 // 	console.log("==== begin connect ====")
 // 	console.log(routes)
