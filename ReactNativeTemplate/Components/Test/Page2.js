@@ -3,17 +3,37 @@ import {Text,View} from "react-native";
 import {TestStyles} from "../../Themes/Default.js";
 import Button from "react-native-button";
 import {Actions} from "react-native-router-flux";
+import {connect} from "react-redux";
+import TestActions from "../../Actions/Test/Test.action.js";
 
 
-export default class Page2 extends BC{
+class Page2 extends BC{
 	render(){
 		return (
 			<View style={TestStyles.View}>
 				<Button style={TestStyles.Button} onPress={()=>{
 					Actions.pop();
 				}}>Go Back</Button>
-				<Text style={[TestStyles.Text]}>{this.props.Message}</Text>
+				<Button style={TestStyles.Button} onPress={()=>{
+					this.props.hello();
+				}}>Trigger Hello</Button>
+				<Text style={[TestStyles.Text]}>props.Message:{this.props.Message}</Text>
+				<Text style={[TestStyles.Text]}>props.message:{this.props.message}</Text>
 			</View>
 		);
 	}
 }
+
+export default connect(({testReducer})=>{
+	console.log(testReducer);
+	return {
+		message:testReducer.message
+	};
+},(dispatch)=>{
+	return {
+		hello(){
+			return dispatch(TestActions.Hello());
+		}
+	};
+})(Page2);
+

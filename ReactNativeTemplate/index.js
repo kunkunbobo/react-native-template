@@ -3,8 +3,8 @@ import {Router, Scene, Actions} from 'react-native-router-flux';
 import {connect} from "react-redux";
 import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from "./Reducers";
-import Page1 from "Components/Test/Page1.js";
-import Page2 from "Components/Test/Page2.js";
+import Page1 from "./Components/Test/Page1.js";
+import Page2 from "./Components/Test/Page2.js";
 
 const RouterWithRedux = connect()(Router);
 
