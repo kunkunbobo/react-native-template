@@ -17,8 +17,8 @@ class Page2 extends BC{
 				<Button style={TestStyles.Button} onPress={()=>{
 					this.props.hello();
 				}}>Trigger Hello</Button>
-				<Text style={[TestStyles.Text]}>props.Message:{this.props.Message}</Text>
-				<Text style={[TestStyles.Text]}>props.message:{this.props.message}</Text>
+				<Text style={[TestStyles.Text]}>message from router params : {this.props.Message}</Text>
+				<Text style={[TestStyles.Text]}>message from store : {this.props.message}</Text>
 			</View>
 		);
 	}
