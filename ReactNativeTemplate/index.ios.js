@@ -10,12 +10,13 @@ import {AppRegistry} from 'react-native';
 // import {Scene, Actions,Router} from 'react-native-router-flux';
 import {Scenes,Store,RouterWithRedux} from "./index.js";
 import { Provider } from 'react-redux';
+import {HeaderStyles} from "./Themes/Default.js";
 
 class ReactNativeTemplate extends Component {
   render() {
     return (
         <Provider store={Store}>
-          <RouterWithRedux scenes={Scenes}>
+          <RouterWithRedux scenes={Scenes} {...HeaderStyles}>
           </RouterWithRedux>
         </Provider>
     );

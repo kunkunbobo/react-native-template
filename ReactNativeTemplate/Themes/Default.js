@@ -3,7 +3,7 @@ import {StyleSheet} from "react-native";
 export const TestStyles=StyleSheet.create({
 		Text:{
 			color:"white",
-			textAlign:"center"
+			textAlign:"left"
 		},
 		BgRed:{
 			backgroundColor:"red"
@@ -25,3 +25,19 @@ export const TestStyles=StyleSheet.create({
 			backgroundColor:"gray"
 		}
 	});
+
+export const HeaderStyles=StyleSheet.create({
+	titleStyle:{
+		color:"red",
+		backgroundColor:"black"
+	},
+	navigationBarStyle:{
+		// backgroundColor:"black"
+	},
+	barButtonTextStyle:{
+		//do something
+	},
+	barButtonIconStyle:{
+		//do something
+	}
+});
