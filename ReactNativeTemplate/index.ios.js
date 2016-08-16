@@ -13,12 +13,16 @@ import {
 } from 'react-native';
 
 import {Scene, Actions,Router} from 'react-native-router-flux';
-import Scenes from "./index.js";
+import {Scenes,Store,RouterWithRedux} from "./index.js";
+import { Provider } from 'react-redux';
 
 class ReactNativeTemplate extends Component {
   render() {
     return (
-      <Router scenes={Scenes}></Router>
+        <Provider store={Store}>
+          <RouterWithRedux scenes={Scenes}>
+          </RouterWithRedux>
+        </Provider>
     );
   }
 }

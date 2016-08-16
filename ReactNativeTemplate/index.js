@@ -1,11 +1,18 @@
 // import React, { Component } from 'react';
 import {Router, Scene, Actions} from 'react-native-router-flux';
-import {connect, Provider} from "react-redux";
-import Store from "./Store/Main.store.js";
-import Page1 from "./Components/Test/Page1.js";
-import Page2 from "./Components/Test/Page2.js";
+import {connect} from "react-redux";
+import { createStore, applyMiddleware, compose } from 'redux';
+import reducers from "./Reducers";
+import Page1 from "Components/Test/Page1.js";
+import Page2 from "Components/Test/Page2.js";
 
 const RouterWithRedux = connect()(Router);
+
+const middleware=[];
+
+const Store=compose(
+	applyMiddleware(...middleware)
+)(createStore)(reducers);
 
 const Scenes = Actions.create(
 	<Scene key="root">
