@@ -1,7 +1,6 @@
 * 集成react-native-router-flux
 * 集成react-redux
 * 集成API
-* 调整 header style 和云筑劳务APP header一致
 * 调整 scene transition
 * tool : build android/ios
 * tool : debug android/ios
