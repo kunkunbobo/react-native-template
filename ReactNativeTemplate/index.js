@@ -15,7 +15,7 @@ const Store=compose(
 )(createStore)(reducers);
 
 const Scenes = Actions.create(
-	<Scene key="root">
+	<Scene key="root" duration={0}>
 		<Scene key="Page1" component={Page1} title="PageOne" initial={true}></Scene>
 		<Scene key="Page2" component={Page2} title="Page2"></Scene>
 	</Scene>
