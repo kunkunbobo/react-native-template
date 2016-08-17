@@ -1,10 +1,26 @@
 import BC from "../../Utility/BaseComponent.js";
-import {PropTypes, View, Text, StyleSheet} from "react-native";
+import {PropTypes, View, Text, StyleSheet,ActivityIndicator,Dimensions} from "react-native";
 import Button from "react-native-button";
 import {TestStyles} from "../../Themes/Default.js";
 import {Actions} from 'react-native-router-flux';
 import {connect} from 'react-redux';
 import {alert,confirm} from "../../Utility/Helper.js";
+import Loading from "../Basic/Loading.js";
+
+let {width,height}=Dimensions.get("window");
+console.log(width,height);
+
+const LoadingStyle=StyleSheet.create({
+	normal:{
+		backgroundColor:"gray",
+		position:"absolute",
+		top:0,
+		left:0,
+		right:0,
+		bottom:0,
+		opacity:0.8
+	}
+});
 
 class Page1 extends BC {
 	constructor(props) {
@@ -38,6 +54,14 @@ class Page1 extends BC {
 				<Button style={TestStyles.Button} onPress={()=>{
 					confirm("confirm");
 				}}>confirm</Button>
+				<Button style={TestStyles.Button} onPress={()=>{
+					this.refs.loading.show();
+					setTimeout(()=>{
+						this.refs.loading.hide();
+					},2000);
+
+				}}>Show Loading</Button>
+				<Loading ref="loading"></Loading>
 			</View>
 		);
 	}

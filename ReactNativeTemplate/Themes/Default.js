@@ -41,3 +41,14 @@ export const HeaderStyles=StyleSheet.create({
 		//do something
 	}
 });
+
+export const LoadingStyles=StyleSheet.create({
+	loading:{
+		backgroundColor:"rgba(0,0,0,0.7)",
+		position:"absolute",
+		top:0,
+		bottom:0,
+		left:0,
+		right:0
+	}
+});

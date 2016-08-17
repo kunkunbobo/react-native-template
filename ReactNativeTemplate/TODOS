@@ -3,8 +3,9 @@ master
 * [done]集成react-native-router-flux
 * [done]集成react-redux
 * [done]local storage 使用 AsyncStorage
-* http client 使用 fetch
-* loading
+* [done]http client 使用 fetch
+* [done]loading
+* [done]alert,confirm
 * 调整 scene transition
 * tool : build android/ios
 * tool : debug android/ios
