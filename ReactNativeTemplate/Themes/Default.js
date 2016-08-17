@@ -28,17 +28,24 @@ export const TestStyles=StyleSheet.create({
 
 export const HeaderStyles=StyleSheet.create({
 	titleStyle:{
-		color:"red",
-		backgroundColor:"black"
+		color:"white",
+		backgroundColor:"#ff9834",
+		paddingTop:5.9,
+		paddingBottom:5.9
+		// height:34,
+		// flex:1,
+		// flexDirection:"column",
+		// justifyContent:"center"
 	},
 	navigationBarStyle:{
-		// backgroundColor:"black"
+		//backgroundColor:"black"
 	},
 	barButtonTextStyle:{
 		//do something
 	},
 	barButtonIconStyle:{
 		//do something
+		marginTop:5.9
 	}
 });
 

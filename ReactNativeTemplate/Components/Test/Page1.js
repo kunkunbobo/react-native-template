@@ -6,9 +6,12 @@ import {Actions} from 'react-native-router-flux';
 import {connect} from 'react-redux';
 import {alert,confirm} from "../../Utility/Helper.js";
 import Loading from "../Basic/Loading.js";
+import * as Animatable from 'react-native-animatable';
 
 let {width,height}=Dimensions.get("window");
 console.log(width,height);
+
+let TadaButton=Animatable.createAnimatableComponent(Button);
 
 const LoadingStyle=StyleSheet.create({
 	normal:{
@@ -62,6 +65,12 @@ class Page1 extends BC {
 
 				}}>Show Loading</Button>
 				<Loading ref="loading"></Loading>
+				<TadaButton style={TestStyles.Button}
+							ref="tadabutton"
+							onPress={()=>{
+								this.refs.tadabutton.tada(100)
+								console.log(arguments);
+							}}>Tada Button</TadaButton>
 			</View>
 		);
 	}
