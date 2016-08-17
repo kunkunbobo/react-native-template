@@ -120,10 +120,6 @@ class RestClient {
 	 * @params url
 	 * @params headers
 	 * @params data
-	 * @params beforeSend
-	 * @params success
-	 * @params error
-	 * @params complete
 	 * */
 	request(conf) {
 		if (!conf) {
@@ -135,46 +131,57 @@ class RestClient {
 		if (!conf.url) {
 			throw new Error("conf.url is required!");
 		}
-		token().then((tokenValue)=> {
+		return token().then((tokenValue)=> {
 			// target url
 			let targetUrl = `${config.APIHost}${conf.url}`;
 			// request method
-			let method = conf.type || "get";
+			let method = (conf.type || "get").toUpperCase();
 			//set headers
-			let defaultHeaders = {};
-			if (method === "post") {
-				defaultHeaders["content-type"] = "application/x-www-form-urlencoded";
+			let headers ;
+			if(conf.headers){
+				headers=new Headers(conf.headers);
+			}
+			else{
+				headers=new Headers();
+			}
+			if (method === "POST") {
+				headers.append("content-type","application/x-www-form-urlencoded");
 			}
 			//set token
 			if (tokenValue) {
-				defaultHeaders[config.TokenName] = tokenValue;
+				headers.append(config.TokenName,tokenValue);
 			}
-			let targetHeaders = Object.assign(defaultHeaders, conf.headers || {});
 
 			// request
-			let agentInstance = agent[method](targetUrl).set(targetHeaders);
-			// set data
-			if (conf.data) {
-				agentInstance.send(conf.data);
-			}
-			agentInstance.end((err, response)=> {
-				if (err) {
-					if (conf.error) {
-						conf.error(err);
-					}
-					else {
-						throw err;
-					}
+			return fetch(targetUrl,{method,headers}).then((response)=>{
+				if(response.headers.get("content-type") === "application/json"){
+					return response.json();
 				}
-				else {
-					if (conf.success) {
-						conf.success(response);
-					}
-				}
-				if (conf.complete) {
-					conf.complete();
-				}
+				return response;
 			});
+			// let agentInstance = agent[method](targetUrl).set(targetHeaders);
+			// // set data
+			// if (conf.data) {
+			// 	agentInstance.send(conf.data);
+			// }
+			// agentInstance.end((err, response)=> {
+			// 	if (err) {
+			// 		if (conf.error) {
+			// 			conf.error(err);
+			// 		}
+			// 		else {
+			// 			throw err;
+			// 		}
+			// 	}
+			// 	else {
+			// 		if (conf.success) {
+			// 			conf.success(response);
+			// 		}
+			// 	}
+			// 	if (conf.complete) {
+			// 		conf.complete();
+			// 	}
+			// });
 		});
 
 
