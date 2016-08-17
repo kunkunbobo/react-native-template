@@ -4,6 +4,7 @@ import Button from "react-native-button";
 import {TestStyles} from "../../Themes/Default.js";
 import {Actions} from 'react-native-router-flux';
 import {connect} from 'react-redux';
+import {alert,confirm} from "../../Utility/Helper.js";
 
 class Page1 extends BC {
 	constructor(props) {
@@ -31,6 +32,12 @@ class Page1 extends BC {
 							});
 						}}>Go Page2</Button>
 				<Text style={TestStyles.Text}>{this.props.title}</Text>
+				<Button style={TestStyles.Button} onPress={()=>{
+					alert("alert");
+				}}>alert</Button>
+				<Button style={TestStyles.Button} onPress={()=>{
+					confirm("confirm");
+				}}>confirm</Button>
 			</View>
 		);
 	}
