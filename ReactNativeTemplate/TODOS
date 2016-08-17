@@ -1,7 +1,7 @@
 * [done]集成react-native-router-flux
 * [done]集成react-redux
 * [done]local storage 使用 AsyncStorage
-* [done]http client 使用 superagent
+* http client 使用 fetch
 * loading
 * 调整 scene transition
 * tool : build android/ios

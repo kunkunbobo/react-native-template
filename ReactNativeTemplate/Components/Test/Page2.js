@@ -5,7 +5,8 @@ import Button from "react-native-button";
 import {Actions} from "react-native-router-flux";
 import {connect} from "react-redux";
 import TestActions from "../../Actions/Test/Test.action.js";
-import restClient from "../../Utility/RestClient.js";
+// import restClient from "../../Utility/RestClient.js";
+// import request from "superagent";
 
 
 class Page2 extends BC{
@@ -21,8 +22,8 @@ class Page2 extends BC{
 				<Text style={[TestStyles.Text]}>message from router params : {this.props.Message}</Text>
 				<Text style={[TestStyles.Text]}>message from store : {this.props.message}</Text>
 				<Button style={TestStyles.Button} onPress={()=>{
-					restClient.get("http://lwapp.yzw.cn/home/GetHomeInfo").then((response)=>{
-						console.log(response.body);
+					fetch("http://www.baidu.com",{method:"get"}).then((res)=>{
+						console.log(res);
 					}).catch((err)=>{
 						console.log(err);
 					});

@@ -1,7 +1,7 @@
 /**
  * Created by jean.h.ma on 5/13/16.
  */
-import agent from "superagent";
+// import agent from "superagent";
 import {token} from "./Helper.js";
 import config from "../Config/Global.config.js";
 // import appConfig from "config/app.config.json";
