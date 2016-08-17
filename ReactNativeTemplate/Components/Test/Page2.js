@@ -22,7 +22,7 @@ class Page2 extends BC{
 				<Text style={[TestStyles.Text]}>message from router params : {this.props.Message}</Text>
 				<Text style={[TestStyles.Text]}>message from store : {this.props.message}</Text>
 				<Button style={TestStyles.Button} onPress={()=>{
-					fetch("http://www.baidu.com",{method:"get"}).then((res)=>{
+					fetch("http://www.baidu.com").then((res)=>{
 						console.log(res);
 					}).catch((err)=>{
 						console.log(err);
