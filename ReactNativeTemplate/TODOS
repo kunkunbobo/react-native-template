@@ -6,6 +6,7 @@ master
 * [done]http client 使用 fetch
 * [done]loading
 * [done]alert,confirm
+* [done] animation
 * 调整 scene transition
 * tool : build android/ios
 * tool : debug android/ios
