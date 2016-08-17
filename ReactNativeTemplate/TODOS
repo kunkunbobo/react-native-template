@@ -8,9 +8,16 @@ master
 * 调整 scene transition
 * tool : build android/ios
 * tool : debug android/ios
+* tool : deploy android/ios
 
 master-labor
 
 * header 样式
+* 引导页
+* 首页过渡页
 * 首页布局
+* 登录
+* 注册
+* 建设中
+* 暂无数据
 * tool : deploy qa/pre/prd android/ios
