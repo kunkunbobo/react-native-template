@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import routerReducer from "./router.reducer.js";
+import routerReducer from "./Router.reducer.js";
 import testReducer from "./Test.reducer.js";
 
 export default combineReducers({
