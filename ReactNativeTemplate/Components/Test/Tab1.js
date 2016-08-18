@@ -12,9 +12,7 @@ class Tab extends BC{
 	render(){
 		return (
 			<View style={TestStyles.View}>
-				<Button onPress={()=>{
-					Actions.Tab2();
-				}}>Tab2</Button>
+				<Text>#1</Text>
 			</View>
 		);
 	}

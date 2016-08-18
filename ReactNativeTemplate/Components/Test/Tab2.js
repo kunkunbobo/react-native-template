@@ -12,6 +12,7 @@ class Tab extends BC{
 	render(){
 		return (
 			<View style={TestStyles.View}>
+				<Text>#2</Text>
 			</View>
 		);
 	}

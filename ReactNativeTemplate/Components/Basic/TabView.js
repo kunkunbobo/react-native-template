@@ -3,11 +3,16 @@ import {View, Image, Text, StyleSheet, TouchableWithoutFeedback} from "react-nat
 import {alert} from "../../Utility/Helper.js";
 
 const TabViewStyles = StyleSheet.create({
-	TabContainer: {},
+	TabContainer: {
+		backgroundColor: "blue",
+		flex: 1,
+		flexDirection: "column",
+		justifyContent: "flex-end"
+	},
 	TabContent: {},
 	TabBar: {
-		backgroundColor:"red",
-		flex:0.5
+		backgroundColor: "red",
+		flex: 1
 	},
 	TabBarNavigation: {
 		flex: 1,
@@ -43,23 +48,25 @@ export default class TabView extends Component {
 
 	render() {
 		return (
-			<View style={TabViewStyles.TabContainer}>
-				<View style={TabViewStyles.TabContent}>
+			<View style={{flex:1,flexDirection:"column"}}>
+				<View style={{flex:1}}>
 					{this.props.tabBars[this.state.tabIndex].content}
 				</View>
-				<View style={TabViewStyles.TabBarNavigation}>
-					{this.props.tabBars.map((bar, index)=> {
-						return (
-							<TouchableWithoutFeedback  key={index} onPress={()=>{
+				<View style={{height:30,backgroundColor:"blue"}}>
+					<View style={{flex:1,flexDirection:"row",justifyContent:"space-between"}}>
+						{this.props.tabBars.map((bar, index)=> {
+							return (
+								<TouchableWithoutFeedback key={index} onPress={()=>{
 							      	//alert(index);
 							      	this.setState({tabIndex:index});
 							      }}>
-								<View style={TabView.TabBar}>
-									<Text>{bar.text}</Text>
-								</View>
-							</TouchableWithoutFeedback>
-						);
-					})}
+									<View style={{flex:1/this.props.tabBars.length}}>
+										<Text style={{flex:1,backgroundColor:"yellow",textAlign:"center"}}>{bar.text}</Text>
+									</View>
+								</TouchableWithoutFeedback>
+							);
+						})}
+					</View>
 				</View>
 			</View>
 		);
