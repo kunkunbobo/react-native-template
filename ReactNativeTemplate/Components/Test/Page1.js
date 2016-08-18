@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {alert,confirm} from "../../Utility/Helper.js";
 import Loading from "../Basic/Loading.js";
 import * as Animatable from 'react-native-animatable';
+import RequestButton from "../Basic/RequestButton.js";
 
 let {width,height}=Dimensions.get("window");
 console.log(width,height);
@@ -74,6 +75,15 @@ class Page1 extends BC {
 								this.refs.tadabutton.tada(100)
 								console.log(arguments);
 							}}>Tada Button</TadaButton>
+				<RequestButton style={TestStyles.Button} onRequest={()=>{
+					return new Promise((resolve,reject)=>{
+						setTimeout(()=>{
+							reject("hello");
+						},2000);
+					}).catch(()=>{
+						console.log(1)
+					});
+				}}>Request Button</RequestButton>
 			</View>
 		);
 	}
