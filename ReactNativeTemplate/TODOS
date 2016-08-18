@@ -7,6 +7,7 @@ master
 * [done]loading
 * [done]封装alert,confirm
 * [done]集成react-native-animation
+* Code Push
 * 封装RequestButton
 * 调整 scene transition
 * tool : build android/ios
