@@ -50,6 +50,9 @@ class Page1 extends BC {
 								Message:"hell react native :) "
 							});
 						}}>Go Page2</Button>
+				<Button style={TestStyles.Button} onPress={()=>{
+					Actions.Tab();
+				}}>Go Tab Demo</Button>
 				<Text style={TestStyles.Text}>{this.props.title}</Text>
 				<Button style={TestStyles.Button} onPress={()=>{
 					alert("alert");
